@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: skltp-applicationset
+spec:
+  generators:
+  - list:
+      elements:
+        - application: tak
+        - application: ei
+        - application: kat
+        - application: vp
+  template:
+    metadata:
+      name: '{{application}}'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/skltp/{{application}}.git
+        targetRevision: HEAD
+        path: 'helm'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: 'ntjp-local'

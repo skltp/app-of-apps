@@ -23,6 +23,3 @@ spec:
         path: helm
         repoURL: https://github.com/skltp/{{application}}.git
         targetRevision: feature/skltp-k8s-dev
-        helm:
-          values: |
-            namespace: ntjp-local

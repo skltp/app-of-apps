@@ -7,10 +7,23 @@ spec:
   generators:
   - list:
       elements:
-      - application: tak
-      - application: ei
-      - application: kat
-      - application: vp
+      - cluster: no-op
+        url: no-op
+        values:
+          application: vp
+      - cluster: no-op
+        url: no-op
+        values:
+          application: kat
+      - cluster: no-op
+        url: no-op
+        values:
+          application: ei
+      - cluster: no-op
+        url: no-op
+        values:
+          application: tak
+      
   template:
     metadata:
       name: '{{application}}'

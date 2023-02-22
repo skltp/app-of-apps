@@ -7,10 +7,10 @@ spec:
   generators:
   - list:
       elements:
-        - application: tak
-        - application: ei
-        - application: kat
-        - application: vp
+      - application: tak
+      - application: ei
+      - application: kat
+      - application: vp
   template:
     metadata:
       name: '{{application}}'

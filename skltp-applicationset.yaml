@@ -11,6 +11,7 @@ spec:
       - application: ei
       - application: kat
       - application: vp
+      - application: test
   template:
     metadata:
       name: '{{application}}'

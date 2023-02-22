@@ -8,13 +8,9 @@ spec:
   - list:
       elements:
         - application: tak
-          url: https://kubernetes.default.svc
         - application: ei
-          url: https://kubernetes.default.svc
         - application: kat
-          url: https://kubernetes.default.svc
         - application: vp
-          url: https://kubernetes.default.svc
   template:
     metadata:
       name: '{{application}}'
@@ -25,5 +21,5 @@ spec:
         targetRevision: HEAD
         path: 'helm'
       destination:
-        server: '{{url}}'
+        server: https://kubernetes.default.svc
         namespace: 'ntjp-local'

@@ -7,32 +7,22 @@ spec:
   generators:
   - list:
       elements:
-      - cluster: no-op
-        url: no-op
-        values:
-          application: vp
-      - cluster: no-op
-        url: no-op
-        values:
-          application: kat
-      - cluster: no-op
-        url: no-op
-        values:
-          application: ei
-      - cluster: no-op
-        url: no-op
-        values:
-          application: tak
-      
+      - application: tak
+      - application: ei
+      - application: kat
+      - application: vp
   template:
     metadata:
       name: '{{application}}'
     spec:
-      project: default
+      destination:
+        namespace: ntjp-local
+        server: https://kubernetes.default.svc
+      project: ntjp-local
       source:
+        path: helm
         repoURL: https://github.com/skltp/{{application}}.git
         targetRevision: feature/skltp-k8s-dev
-        path: helm
-      destination:
-        server: https://kubernetes.default.svc
-        namespace: ntjp-local
+        helm:
+          values: |
+            namespace: ntjp-local

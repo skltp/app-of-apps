@@ -5,12 +5,12 @@ metadata:
   namespace: ntjp-local
 spec:
   generators:
-  - list:
-      elements:
-      - application: tak
-      - application: ei
-      - application: kat
-      - application: vp
+    - list:
+        elements:
+        - application: tak
+        - application: ei
+        - application: kat
+        - application: vp
   template:
     metadata:
       name: '{{application}}'
